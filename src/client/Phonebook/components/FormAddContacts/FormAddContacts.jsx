@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
-import {addContactsFetch} from '../../../../redux/phonebook/phonebook-operations';
+import { addContactsFetch } from '../../../../redux/phonebook/phonebook-operations';
+import { getAllContacts } from '../../../../redux/phonebook/contacts-selectors';
 import {fields} from "./fields";
 import styles from './FormAddContacts.module.css';
 
@@ -25,8 +26,17 @@ class FormAddContacts extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         const { name, number} = this.state;
-        const { onSubmit } = this.props;
-        onSubmit({ name, number });
+        const { onSubmit, contacts } = this.props;
+
+        const result = contacts.find(contact => {
+                return (contact.name === name || contact.number === number);
+            });
+            if (result) {
+               return alert(`${name} is already in contacts`);
+        } else {
+            onSubmit({ name, number });
+            }
+
 
         this.reset();
     }
@@ -83,9 +93,15 @@ FormAddContacts.propTypes = {
     number: PropTypes.string
 }
 
+const mapStateToProps = state => {
+    return {
+        contacts: getAllContacts(state)
+    }
+}
+
 const mapDispatchToProps = dispatch => ({
     onSubmit: (value) => dispatch(addContactsFetch(value))
 
 })
 
-export default connect(null, mapDispatchToProps)(FormAddContacts);
+export default connect(mapStateToProps, mapDispatchToProps)(FormAddContacts);

@@ -47,5 +47,4 @@ export const deleteContactsFetch = (id, idx) => async dispatch => {
     }
 };
 
-// 1. Условие на добавление одинаковых контактов на бэкэнд
 // 2. Разобраться что такое thunk пакет

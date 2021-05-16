@@ -8,14 +8,6 @@ const contactsSlice = createSlice({
             return payload;
         },
         addContactSuccess: (state, { payload }) => {
-            const result = state.find(state => {
-                return (state.name === payload.name || state.number === payload.number);
-            });
-            if (result) {
-                alert(`${payload.name} is already in contacts`);
-                return [...state];
-            }
-
             return [...state, payload];
             },
         deleteContactsSuccess(state, { payload }) {
