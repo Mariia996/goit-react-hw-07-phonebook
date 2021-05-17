@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 import { addContactsFetch } from '../../../../redux/phonebook/phonebook-operations';
-import { getAllContacts } from '../../../../redux/phonebook/contacts-selectors';
+import { getAllContacts } from '../../../../redux/phonebook/phonebook-selectors';
 import {fields} from "./fields";
 import styles from './FormAddContacts.module.css';
 

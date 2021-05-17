@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getAllContacts, getFilter } from '../../../../redux/phonebook/contacts-selectors';
+import { getAllContacts, getFilter } from '../../../../redux/phonebook/phonebook-selectors';
 import { deleteContactsFetch } from '../../../../redux/phonebook/phonebook-operations';
 import PhonebookItems from '../PhonebookItems/PhonebookItem';
 import styles from './ContactList.module.css';

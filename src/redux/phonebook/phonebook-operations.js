@@ -46,5 +46,3 @@ export const deleteContactsFetch = (id, idx) => async dispatch => {
         dispatch(deleteContactsError(error))
     }
 };
-
-// 2. Разобраться что такое thunk пакет

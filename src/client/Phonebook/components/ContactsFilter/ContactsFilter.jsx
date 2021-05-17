@@ -2,7 +2,7 @@ import React from 'react';
 import shortid from 'shortid';
 import { connect } from 'react-redux';
 
-import { getFilter } from '../../../../redux/phonebook/contacts-selectors';
+import { getFilter } from '../../../../redux/phonebook/phonebook-selectors';
 import {handleFilter} from '../../../../redux/phonebook/reducers/phonebookFilter-reducer';
 import { fields } from '../FormAddContacts/fields';
 

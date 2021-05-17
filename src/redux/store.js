@@ -1,4 +1,3 @@
-import thunk from 'redux-thunk';
 import { configureStore, getDefaultMiddleware, combineReducers } from '@reduxjs/toolkit';
 import {
     FLUSH,
